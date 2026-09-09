@@ -2,15 +2,6 @@
 import streamlit as st
 import os
 
-City_Performance_Analysis=st.Page("City_Performance_Analysis.py", title="City Performance Analysis", icon="📊")
-Booking_Trends=st.Page('Booking_Trends.py',title="Booking Trends", icon='📁')
-Booking_Details_Explorer=st.Page('Booking_Details_Explorer.py',title='Booking Details Explorer' ,icon='🌎')
-# Set up navigation
-pg = st.navigation([City_Performance_Analysis, Booking_Trends, Booking_Details_Explorer])
-# Run the selected page
-pg.run()
-
-
 try:
 
   st.header("Executive Dashboard")
@@ -66,5 +57,3 @@ LIMIT 1
 except Exception as error:
     st.error("Unable to connect to Snowflake or read the table.")
     st.exception(error)
-
-
