@@ -35,6 +35,7 @@ try:
     top_5_hotel=session.sql('select * from  hotel_db.public.GOLD_BOOKING_CLEAN order by TOTAL_AMOUNT limit 5').to_pandas()
     st.write(top_5_hotel)
     st.bar_chart(top_5_hotel ,x="HOTEL_ID",y="TOTAL_AMOUNT")
+    st.dataframe(top_5_hotel)
 #     fig = px.pie(
 #         top_5_hotel,
 #         values="TOTAL_AMOUNT",
