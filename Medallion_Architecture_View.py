@@ -14,11 +14,17 @@ try:
     col1.metric("total count of broznze table",broze_table_count)
     col2.metric("total count of silver table",silver_table_count)
     col3.metric("total count of gold table",gold_table_count)
-     # col1.metric("total count of broznze table",broze_table_count)
-
-        broze_table_df=session.sql('select count(*) from  hotel_db.public.BRONZE_HOTEL_BOOKING;').to_pandas()
+    broze_table_df=session.sql('select count(*) from  hotel_db.public.BRONZE_HOTEL_BOOKING;').to_pandas()
     silver_table_df=session.sql('select count(*) from hotel_db.public.SILVER_HOTEL_BOOKINGS;').to_pandas()
     gold_table_df=session.sql('select count(*) from  hotel_db.public.GOLD_BOOKING_CLEAN;').to_pandas()
+    st.subheader('Bronze Table')
+    st.write(broze_table_df)
+    st.subheader('Silver Table')
+    
+    st.write(silver_table_df)
+    st.subheader('Gold Table')
+    
+    st.write(gold_table_df)
 
     
 
