@@ -48,6 +48,12 @@ try:
      
 
     # st.write("Selected City:", hotel_id_df)
+        # download data
+    st.download_button(
+    "Download Booking Data",
+    filtered_df.to_csv(index=False),
+    "booking_data.csv"
+)
     
     
 except Exception as error :
